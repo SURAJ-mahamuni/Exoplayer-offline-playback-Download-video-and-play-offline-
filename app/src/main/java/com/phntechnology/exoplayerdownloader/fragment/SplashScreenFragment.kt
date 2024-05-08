@@ -42,7 +42,7 @@ class SplashScreenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.action_splashScreenFragment_to_exoplayerFragment)
+            findNavController().navigate(R.id.action_splashScreenFragment_to_addUrlToDownloadFragment)
         }, 2000)
 
     }

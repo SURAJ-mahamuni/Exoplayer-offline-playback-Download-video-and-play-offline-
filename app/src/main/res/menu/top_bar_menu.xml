@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_download_list"
+        app:showAsAction="ifRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:enabled="true"
+        android:iconTint="@color/black"
+        android:icon="@drawable/download_list_ic"
+        android:title="@string/download_list" />
+</menu>

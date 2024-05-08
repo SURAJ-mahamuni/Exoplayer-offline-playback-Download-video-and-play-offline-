@@ -48,7 +48,7 @@ class ExoplayerFragment : Fragment() {
 
     var app: BaseApplication? = null
 
-    var contentId : String? = null
+    var contentId: String? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,7 +56,7 @@ class ExoplayerFragment : Fragment() {
         app = activity?.application as BaseApplication
         viewModel.dataBase = app?.appContainer?.dataBase
         contentId = exoDownloadManager.contentId
-        viewModel.getDownloads(requireContext())
+//        viewModel.getDownloadsFromExoDB(requireContext())
     }
 
     override fun onCreateView(
@@ -82,9 +82,20 @@ class ExoplayerFragment : Fragment() {
 
     @OptIn(UnstableApi::class)
     private fun observables() {
+        viewModel.getCurrentVideoDownloadingStatus(url).observe(viewLifecycleOwner) {
+            if (!it.isNullOrEmpty()) {
+                contentId = it[0].contentId
+                if (it[0].downloadingPercent == 100.0 && !it[0].notificationFlag){
+                    viewModel.getNotification(requireContext(),it[0].contentId,true)
+                }else{
+                    viewModel.getDownloadsFromExoDB(requireContext(),it[0].notificationFlag)
+                }
+            }else{
+                viewModel.getDownloadsFromExoDB(requireContext(),false)
+            }
+        }
         viewModel.downloadListLiveData.observe(viewLifecycleOwner) {
             Log.e("downloads", it.toString())
-            Log.e("contentId", "$contentId")
             if (!it.isNullOrEmpty()) {
                 binding.button.hideView()
                 binding.values.showView()
@@ -92,19 +103,18 @@ class ExoplayerFragment : Fragment() {
                     ?.let { exoDownloadInfo ->
                         binding.progressBar2.progress =
                             exoDownloadInfo.percentDownloaded?.toInt() ?: 0
-                        binding.downloadedSize.text = BytesConvertor.bytesToHumanReadableSize(exoDownloadInfo.bytesDownloaded ?: 0.0)
-                        binding.totalSize.text = BytesConvertor.bytesToHumanReadableSize(exoDownloadInfo.contentLength?.toDouble() ?: 0.0)
-                        binding.percentDownload.text = "${exoDownloadInfo.percentDownloaded?.toInt() ?: 0}%"
+                        binding.downloadedSize.text = BytesConvertor.bytesToHumanReadableSize(
+                            exoDownloadInfo.bytesDownloaded ?: 0.0
+                        )
+                        binding.totalSize.text = BytesConvertor.bytesToHumanReadableSize(
+                            exoDownloadInfo.contentLength?.toDouble() ?: 0.0
+                        )
+                        binding.percentDownload.text =
+                            "${exoDownloadInfo.percentDownloaded?.toInt() ?: 0}%"
                     }
-            }else{
+            } else {
                 binding.button.showView()
                 binding.values.hideView()
-            }
-        }
-        viewModel.getCurrentVideoDownloadingStatus(url).observe(viewLifecycleOwner){
-            if (!it.isNullOrEmpty()){
-                contentId = it[0].contentId
-                viewModel.getDownloads(requireContext())
             }
         }
     }

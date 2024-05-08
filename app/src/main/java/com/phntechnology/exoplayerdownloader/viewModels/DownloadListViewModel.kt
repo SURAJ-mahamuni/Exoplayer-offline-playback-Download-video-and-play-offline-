@@ -1,5 +1,6 @@
 package com.phntechnology.exoplayerdownloader.viewModels
 
+
 import android.annotation.SuppressLint
 import android.content.Context
 import androidx.annotation.OptIn
@@ -14,7 +15,6 @@ import androidx.room.util.getColumnIndex
 import com.phntechnology.exoplayerdownloader.database.ExoDownloadDao
 import com.phntechnology.exoplayerdownloader.model.ExoDownloadInfo
 import com.phntechnology.exoplayerdownloader.model.ExoDownloadingHistory
-import com.phntechnology.exoplayerdownloader.notification.NotificationModule
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -23,17 +23,17 @@ import java.lang.Exception
 import javax.inject.Inject
 
 @HiltViewModel
-class ExoplayerViewModel @Inject constructor(
-    private val dao: ExoDownloadDao,
-    private val notificationModule: NotificationModule
+class DownloadListViewModel @Inject constructor(
+    private val dao: ExoDownloadDao
 ) : ViewModel() {
+
     var dataBase: StandaloneDatabaseProvider? = null
 
-    val downloadListLiveData = MutableLiveData<LinkedHashMap<String, ExoDownloadInfo>>()
+    val downloadListLiveData = MutableLiveData<ArrayList<ExoDownloadInfo>>()
 
     @SuppressLint("RestrictedApi")
     @OptIn(UnstableApi::class)
-    fun getDownloadsFromExoDB(context: Context,notificationFlag : Boolean) {
+    fun getDownloadsFromExoDB(context: Context) {
         viewModelScope.launch(Dispatchers.IO) {
             var flag = ""
             val downloadList = mutableListOf<ExoDownloadInfo>()
@@ -81,21 +81,8 @@ class ExoplayerViewModel @Inject constructor(
                             keySetId = key_set_id
                         )
                         downloadList.add(exoDownloadInfo)
-                        dao.addExoDownloadingHistory(
-                            ExoDownloadingHistory(
-                                id,
-                                uri,
-                                false,
-                                percent_downloaded
-                            )
-                        )
-                        downloadListLiveData.postValue(
-                            LinkedHashMap<String, ExoDownloadInfo>().apply {
-                                put(key_id ?: "", exoDownloadInfo)
-                            })
+                        downloadListLiveData.postValue(ArrayList(downloadList))
                         if (percent_downloaded == 100.0) {
-                            dao.updatePercentExoDownloadingHistory(true, 100.0, id)
-                            if (!notificationFlag) getNotification(context, id, true)
                             flag = "out"
                         }
                     }
@@ -107,38 +94,11 @@ class ExoplayerViewModel @Inject constructor(
             }
             delay(500)
             if (flag == "") {
-                getDownloadsFromExoDB(context,notificationFlag)
+                getDownloadsFromExoDB(context)
             }
             return@launch
         }
     }
 
-    fun getCurrentVideoDownloadingStatus(url: String): LiveData<List<ExoDownloadingHistory>> {
-        return dao.getCurrentVideoDownloadingStatus(url = url).asLiveData()
-    }
-
-    fun getCurrentVideoInfo(id: String): ExoDownloadInfo? {
-        return downloadListLiveData.value?.get(id)
-    }
-
-    fun getNotification(context: Context, contentId: String, flag: Boolean) {
-        notificationModule.createNotification(context).let {
-            it.createNotification("action", "ExoDownloading")
-            it.showBasicNotification(
-                "Download Complete.",
-                "Video 1"
-            )
-            if (flag) {
-                viewModelScope.launch(Dispatchers.IO) {
-                    dao.updatePercentExoDownloadingHistory(
-                        notificationFlag = true,
-                        100.0,
-                        contentId = contentId
-                    )
-                }
-
-            }
-        }
-    }
 
 }

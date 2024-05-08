@@ -10,4 +10,9 @@
     <string name="app_describe">downloading</string>
     <string name="total_size">total size</string>
     <string name="downloaded_size">downloaded size</string>
+    <string name="start_download">Start Download</string>
+    <string name="video_url">Video Url</string>
+    <string name="download_list">Downloaded Video</string>
+    <string name="downloads">Downloads</string>
+    <string name="video_download_size">%1$s / %2$s</string>
 </resources>

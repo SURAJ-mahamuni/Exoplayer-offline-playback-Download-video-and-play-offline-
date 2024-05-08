@@ -23,7 +23,7 @@ import java.lang.Exception
 import javax.inject.Inject
 
 @HiltViewModel
-class ExoplayerViewModel @Inject constructor(
+class AddUrlToDownloadViewModel @Inject constructor(
     private val dao: ExoDownloadDao,
     private val notificationModule: NotificationModule
 ) : ViewModel() {
@@ -33,7 +33,7 @@ class ExoplayerViewModel @Inject constructor(
 
     @SuppressLint("RestrictedApi")
     @OptIn(UnstableApi::class)
-    fun getDownloadsFromExoDB(context: Context,notificationFlag : Boolean) {
+    fun getDownloadsFromExoDB(context: Context, notificationFlag : Boolean) {
         viewModelScope.launch(Dispatchers.IO) {
             var flag = ""
             val downloadList = mutableListOf<ExoDownloadInfo>()
@@ -140,5 +140,4 @@ class ExoplayerViewModel @Inject constructor(
             }
         }
     }
-
 }

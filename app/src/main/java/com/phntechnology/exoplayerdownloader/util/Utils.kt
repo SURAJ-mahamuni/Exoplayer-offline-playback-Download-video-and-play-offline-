@@ -40,7 +40,6 @@ import java.util.regex.Pattern
 @OptIn(markerClass = [UnstableApi::class])
 @Synchronized
 fun Service.getDownloadNotificationHelper(): DownloadNotificationHelper {
-
     return DownloadNotificationHelper(this, DOWNLOAD_NOTIFICATION_CHANNEL_ID)
 }
 
@@ -133,7 +132,7 @@ fun Fragment.backPressedHandle(handle: () -> Unit) {
             handle()
         }
     }
-    requireActivity().onBackPressedDispatcher.addCallback(callback)
+    requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,callback)
 }
 
 fun Fragment.hideSoftKeyboard() {
@@ -249,6 +248,11 @@ fun isNotNullOrZero(number: String, errorMessage: String): String? {
         return errorMessage
     }
     return null
+}
+
+fun isValidVideoUrl(url: String): Boolean {
+    val urlPattern = Regex("^((https?|ftp|file):\\/\\/)?([\\da-z.-]+)\\.([a-z.]{2,6})([\\/\\w .-]*)*\\/(.*\\.(mp4|avi|mov|wmv|flv|mkv))\$", RegexOption.IGNORE_CASE)
+    return urlPattern.matches(url)
 }
 
 fun isValidName(name: String, errorMessage: String = ""): String? {

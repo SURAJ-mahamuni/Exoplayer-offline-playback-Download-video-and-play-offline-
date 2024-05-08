@@ -28,4 +28,7 @@ interface ExoDownloadDao{
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addExoDownloadingHistory(exoDownloadingHistory: ExoDownloadingHistory)
 
+    @Query("update ExoDownloadingHistory set notificationFlag=:notificationFlag , downloadingPercent=:downloadingPercent  where contentId=:contentId")
+    fun updatePercentExoDownloadingHistory(notificationFlag : Boolean,downloadingPercent : Double,contentId: String)
+
 }

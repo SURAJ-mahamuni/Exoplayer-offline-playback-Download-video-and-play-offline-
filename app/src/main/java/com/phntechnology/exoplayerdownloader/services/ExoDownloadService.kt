@@ -26,7 +26,6 @@ class ExoDownloadService() : DownloadService(
     R.string.app_describe
 ) {
 
-//    val downloadingList = MutableLiveData<List<Download>>()
 
     private lateinit var notificationHelper: DownloadNotificationHelper
     private lateinit var context: Context
@@ -81,20 +80,15 @@ class ExoDownloadService() : DownloadService(
     override fun getForegroundNotification(
         downloads: List<Download>, notMetRequirements: @RequirementFlags Int
     ): Notification {
-//        downloadingList.postValue(downloads)
         return getDownloadNotificationHelper().buildProgressNotification(
             this,
             R.drawable.ic_download,
             null,
-            "Downloading",
+            null,
             downloads,
             notMetRequirements
         )
     }
-//
-//    fun getDownloadingList(): MutableLiveData<List<Download>> {
-//        return downloadingList
-//    }
 
 
 }

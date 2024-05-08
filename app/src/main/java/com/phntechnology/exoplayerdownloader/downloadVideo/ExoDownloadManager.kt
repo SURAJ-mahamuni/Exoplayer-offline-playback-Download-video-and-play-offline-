@@ -18,7 +18,7 @@ class ExoDownloadManager @Inject constructor(@ApplicationContext private val con
     var contentId: String? = null
 
     fun startDownload(contentUri: String) {
-        contentId = UUID(0L, 1000L).toString()
+        contentId = UUID.randomUUID().toString().replace("-", "").substring(0, 16)
 
         Log.e("id", contentId ?: "")
 
@@ -32,10 +32,6 @@ class ExoDownloadManager @Inject constructor(@ApplicationContext private val con
             downloadRequest,
             /* foreground= */ false
         )
-    }
-
-    fun getProgress() {
-
     }
 
     fun removeDownload() {

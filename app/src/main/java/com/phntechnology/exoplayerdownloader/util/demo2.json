@@ -1,0 +1,321 @@
+{
+  "video_id": 2,
+  "questions": [
+    {
+      "question": "What is the primary function of a quadcopter?",
+      "options": [
+        {
+          "option": "Aerial photography",
+          "is_correct": 0
+        },
+        {
+          "option": "Precision agriculture",
+          "is_correct": 0
+        },
+        {
+          "option": "Geographic mapping",
+          "is_correct": 0
+        },
+        {
+          "option": "Disaster management",
+          "is_correct": 1
+        }
+      ]
+    },
+    {
+      "question": "Which component of a quadcopter is responsible for controlling the height?",
+      "options": [
+        {
+          "option": "Flight mode",
+          "is_correct": 0
+        },
+        {
+          "option": "Pitch, roll, and yaw",
+          "is_correct": 0
+        },
+        {
+          "option": "Trim",
+          "is_correct": 0
+        },
+        {
+          "option": "Throttle",
+          "is_correct": 1
+        }
+      ]
+    },
+    {
+      "question": "How many rotors does a quadcopter have?",
+      "options": [
+        {
+          "option": "Two",
+          "is_correct": 0
+        },
+        {
+          "option": "Three",
+          "is_correct": 0
+        },
+        {
+          "option": "Four",
+          "is_correct": 1
+        },
+        {
+          "option": "Five",
+          "is_correct": 0
+        }
+      ]
+    },
+    {
+      "question": "What principle allows a quadcopter to fly?",
+      "options": [
+        {
+          "option": "Newton's First Law",
+          "is_correct": 0
+        },
+        {
+          "option": "Newton's Third Law",
+          "is_correct": 0
+        },
+        {
+          "option": "Newton's Second Law",
+          "is_correct": 1
+        },
+        {
+          "option": "Bernoulli's Principle",
+          "is_correct": 0
+        }
+      ]
+    },
+    {
+      "question": "Which of the following is NOT a common application of quadcopters?",
+      "options": [
+        {
+          "option": "Weather forecasting",
+          "is_correct": 0
+        },
+        {
+          "option": "Environmental monitoring",
+          "is_correct": 0
+        },
+        {
+          "option": "Automotive manufacturing",
+          "is_correct": 1
+        },
+        {
+          "option": "Shipping and delivery",
+          "is_correct": 0
+        }
+      ]
+    },
+    {
+      "question": "What is the purpose of the Flight Controller (FC) in a quadcopter?",
+      "options": [
+        {
+          "option": "To control the ESCs",
+          "is_correct": 0
+        },
+        {
+          "option": "To process data from sensors",
+          "is_correct": 1
+        },
+        {
+          "option": "To provide power to the motors",
+          "is_correct": 0
+        },
+        {
+          "option": "To store and transport the drone",
+          "is_correct": 0
+        }
+      ]
+    },
+    {
+      "question": "How can a quadcopter be controlled?",
+      "options": [
+        {
+          "option": "By remote commands or autonomously",
+          "is_correct": 1
+        },
+        {
+          "option": "Only by autonomous flight",
+          "is_correct": 0
+        },
+        {
+          "option": "Only by remote commands",
+          "is_correct": 0
+        },
+        {
+          "option": "By voice commands",
+          "is_correct": 0
+        }
+      ]
+    },
+    {
+      "question": "What is the purpose of the GPS receiver in a quadcopter?",
+      "options": [
+        {
+          "option": "To control the height",
+          "is_correct": 0
+        },
+        {
+          "option": "To stabilize the flight",
+          "is_correct": 0
+        },
+        {
+          "option": "To communicate with other drones",
+          "is_correct": 0
+        },
+        {
+          "option": "To navigate and track location",
+          "is_correct": 1
+        }
+      ]
+    },
+    {
+      "question": "What safety measures should be taken before flying a quadcopter?",
+      "options": [
+        {
+          "option": "Flying overpopulated areas",
+          "is_correct": 0
+        },
+        {
+          "option": "Flying in strong winds",
+          "is_correct": 0
+        },
+        {
+          "option": "Checking the battery and propellers",
+          "is_correct": 1
+        },
+        {
+          "option": "Ignoring weather conditions",
+          "is_correct": 0
+        }
+      ]
+    },
+    {
+      "question": "How does a quadcopter achieve stability during flight?",
+      "options": [
+        {
+          "option": "By using sensors and flight control algorithms",
+          "is_correct": 1
+        },
+        {
+          "option": "By adjusting the throttle",
+          "is_correct": 0
+        },
+        {
+          "option": "By using GPS signals",
+          "is_correct": 0
+        },
+        {
+          "option": "By changing the shape of the propellers",
+          "is_correct": 0
+        }
+      ]
+    },
+    {
+      "question": "Which flight maneuver allows a quadcopter to stay in one place without moving or turning?",
+      "options": [
+        {
+          "option": "Ascending",
+          "is_correct": 0
+        },
+        {
+          "option": "Hovering",
+          "is_correct": 1
+        },
+        {
+          "option": "Descending",
+          "is_correct": 0
+        },
+        {
+          "option": "Turning",
+          "is_correct": 0
+        }
+      ]
+    },
+    {
+      "question": "What is the purpose of the auto-hover feature in a quadcopter?",
+      "options": [
+        {
+          "option": "To take pictures from high up",
+          "is_correct": 0
+        },
+        {
+          "option": "To automatically return to its takeoff location",
+          "is_correct": 0
+        },
+        {
+          "option": "To hover in the air without manual control",
+          "is_correct": 1
+        },
+        {
+          "option": "To fly in different directions",
+          "is_correct": 0
+        }
+      ]
+    },
+    {
+      "question": "Why is it important to update the software and firmware of a quadcopter?",
+      "options": [
+        {
+          "option": "To add more weight",
+          "is_correct": 0
+        },
+        {
+          "option": "To fix problems and add features",
+          "is_correct": 1
+        },
+        {
+          "option": "To make the propellers rotate faster",
+          "is_correct": 0
+        },
+        {
+          "option": "To reduce battery life",
+          "is_correct": 0
+        }
+      ]
+    },
+    {
+      "question": "What should be done if a quadcopter has serious damage?",
+      "options": [
+        {
+          "option": "Continue flying",
+          "is_correct": 0
+        },
+        {
+          "option": "Try to fix it yourself",
+          "is_correct": 0
+        },
+        {
+          "option": "Replace the battery",
+          "is_correct": 0
+        },
+        {
+          "option": "Seek professional help",
+          "is_correct": 1
+        }
+      ]
+    },
+    {
+      "question": "Which of the following is NOT a maintenance tip for quadcopters?",
+      "options": [
+        {
+          "option": "Cleaning and inspection",
+          "is_correct": 0
+        },
+        {
+          "option": "Avoiding software updates",
+          "is_correct": 1
+        },
+        {
+          "option": "Checking battery performance",
+          "is_correct": 0
+        },
+        {
+          "option": "Storing and transporting properly",
+          "is_correct": 0
+        }
+      ]
+    }
+  ],
+  "assess_time": "12"
+}

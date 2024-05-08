@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_splashScreenFragment_to_exoplayerFragment"
             app:destination="@id/exoplayerFragment" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_addUrlToDownloadFragment"
+            app:destination="@id/addUrlToDownloadFragment" />
     </fragment>
     <fragment
         android:id="@+id/exoplayerFragment"
         android:name="com.phntechnology.exoplayerdownloader.fragment.ExoplayerFragment"
         android:label="fragment_exoplayer"
         tools:layout="@layout/fragment_exoplayer" />
+    <fragment
+        android:id="@+id/addUrlToDownloadFragment"
+        android:name="com.phntechnology.exoplayerdownloader.fragment.AddUrlToDownloadFragment"
+        android:label="fragment_add_url_to_download"
+        tools:layout="@layout/fragment_add_url_to_download" />
 </navigation>

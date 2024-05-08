@@ -1,0 +1,328 @@
+{
+  "video_id": 2,
+  "questions": [
+    {
+      "question": "What is the primary function of a quadcopter?",
+      "options": [
+        {
+          "question": "What is the function of drag in drone aerodynamics?",
+          "options": [
+            {
+              "option": "It generates lift.",
+              "is_correct": 0
+            },
+            {
+              "option": "It opposes the drone's forward motion.",
+              "is_correct": 1
+            },
+            {
+              "option": "It creates a downward force.",
+              "is_correct": 0
+            },
+            {
+              "option": "It keeps the drone in the air.",
+              "is_correct": 0
+            }
+          ]
+        },
+        {
+          "question": "How is control achieved in drones to move in different directions?",
+          "options": [
+            {
+              "option": "By varying the speed of rotation of the propellers",
+              "is_correct": 0
+            },
+            {
+              "option": "By adjusting the weight distribution",
+              "is_correct": 0
+            },
+            {
+              "option": "By minimizing drag",
+              "is_correct": 0
+            },
+            {
+              "option": "By increasing the drone's weight",
+              "is_correct": 0
+            }
+          ]
+        },
+        {
+          "question": "What is the main purpose of lift in drone aerodynamics?",
+          "options": [
+            {
+              "option": "To resist gravity and keep the drone in the air",
+              "is_correct": 1
+            },
+            {
+              "option": "To oppose the drone's forward motion",
+              "is_correct": 0
+            },
+            {
+              "option": "To generate thrust for propulsion",
+              "is_correct": 0
+            },
+            {
+              "option": "To maintain stability in various flight conditions",
+              "is_correct": 0
+            }
+          ]
+        },
+        {
+          "question": "How can stability be achieved in drone flight?",
+          "options": [
+            {
+              "option": "By increasing drag",
+              "is_correct": 0
+            },
+            {
+              "option": "By minimizing weight",
+              "is_correct": 0
+            },
+            {
+              "option": "By using the right weight distribution, aerodynamic design, and control systems",
+              "is_correct": 1
+            },
+            {
+              "option": "By reducing thrust",
+              "is_correct": 0
+            }
+          ]
+        },
+        {
+          "question": "How can crosswinds affect drone flight?",
+          "options": [
+            {
+              "option": "Increase drag and slow the drone's forward speed",
+              "is_correct": 0
+            },
+            {
+              "option": "Increase the drone's speed but affect control and stability",
+              "is_correct": 0
+            },
+            {
+              "option": "Create lateral forces, resulting in drift",
+              "is_correct": 1
+            },
+            {
+              "option": "None of the above",
+              "is_correct": 0
+            }
+          ]
+        },
+        {
+          "question": "What is the purpose of axis stabilization in drones?",
+          "options": [
+            {
+              "option": "To control the drone's speed",
+              "is_correct": 0
+            },
+            {
+              "option": "To maintain stable orientation and stability along its three axes of motion",
+              "is_correct": 1
+            },
+            {
+              "option": "To resist the effects of wind",
+              "is_correct": 0
+            },
+            {
+              "option": "To stabilize the camera for capturing smooth footage",
+              "is_correct": 0
+            }
+          ]
+        },
+        {
+          "question": "How does axis stabilization contribute to flight stability in drones?",
+          "options": [
+            {
+              "option": "By reducing vibrations caused by drone motion",
+              "is_correct": 0
+            },
+            {
+              "option": "By stabilizing the drone along its roll, pitch, and yaw axes",
+              "is_correct": 1
+            },
+            {
+              "option": "By increasing the drone's speed",
+              "is_correct": 0
+            },
+            {
+              "option": "By improving efficiency and performance",
+              "is_correct": 0
+            }
+          ]
+        },
+        {
+          "question": "Which component serves as the \"brain\" of the drone in processing sensor data and adjusting motor speeds?",
+          "options": [
+            {
+              "option": "Gyroscope",
+              "is_correct": 0
+            },
+            {
+              "option": "Accelerometer",
+              "is_correct": 0
+            },
+            {
+              "option": "Flight controller",
+              "is_correct": 1
+            },
+            {
+              "option": "Motor control",
+              "is_correct": 0
+            }
+          ]
+        },
+        {
+          "question": "What role do sensors like gyroscopes and accelerometers play in drone stabilization systems?",
+          "options": [
+            {
+              "option": "Monitoring the drone's acceleration in all directions",
+              "is_correct": 0
+            },
+            {
+              "option": "Measuring the drone's rotation rate along three axes",
+              "is_correct": 0
+            },
+            {
+              "option": "Processing sensor data and giving instructions to the motor",
+              "is_correct": 1
+            },
+            {
+              "option": "Regulating the speed of the drone's motors based on information from the flight controller",
+              "is_correct": 0
+            }
+          ]
+        },
+        {
+          "question": "What is the primary focus of roll stabilization in drones?",
+          "options": [
+            {
+              "option": "Maintaining stability along the drone's lateral axis",
+              "is_correct": 1
+            },
+            {
+              "option": "Adjusting motor speed to control the drone's spin",
+              "is_correct": 0
+            },
+            {
+              "option": "Stabilizing the drone's rotation around the vertical axis",
+              "is_correct": 0
+            },
+            {
+              "option": "Ensuring stability along the drone's pitch axis",
+              "is_correct": 0
+            }
+          ]
+        },
+        {
+          "question": "How is yaw stabilization achieved in drones?",
+          "options": [
+            {
+              "option": "By using control algorithms and sensors like accelerometers and gyroscopes",
+              "is_correct": 1
+            },
+            {
+              "option": "By adjusting motor speed to maintain and control the drone's spin",
+              "is_correct": 0
+            },
+            {
+              "option": "By stabilizing acceleration along the X, Y, and Z axes",
+              "is_correct": 0
+            },
+            {
+              "option": "By ensuring stability along the drone's lateral axis",
+              "is_correct": 0
+            }
+          ]
+        },
+
+
+        {
+          "question": "What is the primary advantage of 6-axis stabilization over 3-axis stabilization in drones?",
+          "options": [
+            {
+              "option": "It provides more stability and control, especially in challenging flight conditions",
+              "is_correct": 0
+            },
+            {
+              "option": "It focuses on stabilizing only the pitch, roll, and yaw axes",
+              "is_correct": 0
+            },
+            {
+              "option": "It accelerates in three dimensions in addition to stabilizing orientation",
+              "is_correct": 0
+            },
+            {
+              "option": "It uses sensors like accelerometers and gyroscopes to stabilize the drone's rotation rate",
+              "is_correct": 1
+            }
+          ]
+        },
+        {
+          "question": "Which factor influences a drone's maneuverability by allowing it to change directions faster?",
+          "options": [
+            {
+              "option": "Motor Power",
+              "is_correct": 0
+            },
+            {
+              "option": "Propeller Design",
+              "is_correct": 1
+            },
+            {
+              "option": "Control System",
+              "is_correct": 0
+            },
+            {
+              "option": "Weight and Size",
+              "is_correct": 0
+            }
+          ]
+        },
+        {
+          "question": "How does wind condition affect a drone's maneuverability?",
+          "options": [
+            {
+              "option": "It increases the drone's speed",
+              "is_correct": 0
+            },
+            {
+              "option": "It has no effect on maneuverability",
+              "is_correct": 0
+            },
+            {
+              "option": "It makes it more difficult to control the drone and make accurate movements",
+              "is_correct": 1
+            },
+            {
+              "option": "It improves the drone's stability",
+              "is_correct": 0
+            }
+          ]
+        },
+        {
+          "question": "What external factor can have a significant impact on a drone's movements, making it more difficult to control and maneuver accurately?",
+          "options": [
+            {
+              "option": "Battery life",
+              "is_correct": 0
+            },
+            {
+              "option": "Terrain type",
+              "is_correct": 0
+            },
+            {
+              "option": "Wind conditions",
+              "is_correct": 1
+            },
+            {
+              "option": "Temperature fluctuations",
+              "is_correct": 0
+            }
+          ]
+        }
+      ],
+      "assess_time": "12"
+    }
+  ]
+}
